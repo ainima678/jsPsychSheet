@@ -3,10 +3,17 @@
   <head>
     <title>My experiment</title>
 
-    <script src="https://ainima678.github.io/jsPsychSheet/experiment/jspsych/jspsych.js"></script>
-    <script src="https://ainima678.github.io/jsPsychSheet/experiment/jspsych/plugins/jspsych-html-keyboard-response.js"></script>
-    <script src="https://ainima678.github.io/jsPsychSheet/experiment/jspsych/plugins/jspsych-image-keyboard-response.js"></script>
-    <link rel="stylesheet" href="https://ainima678.github.io/jsPsychSheet/experiment/jspsych/css/jspsych.css">
+    <!-- jsPsych library -->
+    <base target="_top">
+    <!-- jsPsych library -->
+    <script src="https://brain2ai.in/jsPsychSheet/jspsych/jspsych.js"></script>
+    <script src="https://brain2ai.in/jsPsychSheet/jspsych/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="https://brain2ai.in/jsPsychSheet/jspsych/plugins/jspsych-image-keyboard-response.js"></script>
+    <link rel="stylesheet" href="https://brain2ai.in/jsPsychSheet/jspsych/css/jspsych.css">
+
+    <!-- jsPsychSheet library -->
+    <script src="https://brain2ai.in/jsPsychSheet/jspsychsheet.js"></script>
+    <link rel="stylesheet" href="https://brain2ai.in/jsPsychSheet/jspsychsheet.css">
   </head>
   <body></body>
   <script>
@@ -98,7 +105,7 @@
     jsPsych.init({
       timeline: timeline,
       on_finish: function() {
-        jsPsych.data.displayData();
+        jsPsychSheet.uploadData(jsPsych.data.get().csv());
       }
     });
   </script>
